@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/ASM/scr/GraphNodes/GN_State.gd" type="Script" id=1]
+
+[node name="state_3161026589" type="GraphNode" groups=[
+"ASM_GN",
+"ASM_STATE",
+]]
+margin_left = -158.0
+margin_top = -9.0
+margin_right = 162.0
+margin_bottom = 172.0
+rect_pivot_offset = Vector2( 160, 10 )
+title = "State"
+show_close = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 0.67451, 0.67451, 0.67451, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 0.67451, 0.67451, 0.67451, 1 )
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color( 1, 1, 1, 1 )
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color( 1, 1, 1, 1 )
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color( 1, 1, 1, 1 )
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color( 1, 1, 1, 1 )
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color( 1, 1, 1, 1 )
+slot/4/right_enabled = false
+slot/4/right_type = 0
+slot/4/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 304.0
+margin_bottom = 38.0
+text = "Name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 16.0
+margin_top = 39.0
+margin_right = 304.0
+margin_bottom = 65.0
+text = "state_3161026589"
+max_length = 20
+clear_button_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cb_enter" type="CheckButton" parent="."]
+margin_left = 16.0
+margin_top = 66.0
+margin_right = 304.0
+margin_bottom = 106.0
+shortcut_in_tooltip = false
+text = "Has OnEnter()"
+
+[node name="cb_exit" type="CheckButton" parent="."]
+margin_left = 16.0
+margin_top = 107.0
+margin_right = 304.0
+margin_bottom = 147.0
+shortcut_in_tooltip = false
+text = "Has OnExit()"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 16.0
+margin_top = 148.0
+margin_right = 304.0
+margin_bottom = 148.0
+scroll_following = true
+[connection signal="close_request" from="." to="." method="_on_GNState_close_request"]
+[connection signal="dragged" from="." to="." method="_on_GNState_dragged"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="toggled" from="cb_enter" to="." method="_on_cb_enter_toggled"]
+[connection signal="toggled" from="cb_exit" to="." method="_on_cb_exit_toggled"]

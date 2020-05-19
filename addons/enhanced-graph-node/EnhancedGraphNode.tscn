@@ -1,0 +1,144 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://addons/enhanced-graph-node/icons/sort-down.png" type="Texture" id=1]
+[ext_resource path="res://addons/enhanced-graph-node/Connector.gd" type="Script" id=2]
+[ext_resource path="res://addons/enhanced-graph-node/EnhancedGraphNode.gd" type="Script" id=3]
+[ext_resource path="res://addons/enhanced-graph-node/fonts/UbuntuMono-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://addons/enhanced-graph-node/CheckBox.gd" type="Script" id=5]
+[ext_resource path="res://addons/enhanced-graph-node/Scaler.gd" type="Script" id=6]
+[ext_resource path="res://addons/enhanced-graph-node/icons/arrow-right.png" type="Texture" id=7]
+[ext_resource path="res://addons/enhanced-graph-node/icons/close.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 32, 32 )
+modulate_color = Color( 0.321289, 0.301208, 0.301208, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.878431, 0.901961, 0.192157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0729561, 0.0729561, 0.0830078, 1 )
+corner_radius_top_left = 180
+corner_radius_top_right = 180
+corner_radius_bottom_right = 180
+corner_radius_bottom_left = 180
+
+[node name="EnhancedGraphNode" type="Panel" groups=[
+"EGN",
+]]
+margin_right = 346.0
+margin_bottom = 39.0
+mouse_default_cursor_shape = 13
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+title = "dsa"
+
+[node name="Content" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+margin_top = 17.0
+margin_bottom = 360.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowHide" type="CheckBox" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 20, 20 )
+rect_rotation = -90.0
+rect_scale = Vector2( 0.607614, 0.607614 )
+rect_pivot_offset = Vector2( 18.9668, 18.7518 )
+rect_clip_content = true
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_icons/checked = ExtResource( 1 )
+custom_icons/unchecked = ExtResource( 1 )
+custom_styles/focus = SubResource( 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 38.0
+margin_top = 1.0
+margin_right = 236.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 2 )
+text = "Test"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Delete" type="TextureButton" parent="."]
+modulate = Color( 0.329412, 0.329412, 0.329412, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -31.9783
+margin_top = 11.0
+margin_right = -15.9783
+margin_bottom = 27.0
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scaler" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -51.4514
+margin_top = 8.82344
+margin_right = -35.4514
+margin_bottom = 24.8234
+rect_rotation = -89.9999
+rect_pivot_offset = Vector2( 7.79254, 10.3705 )
+mouse_default_cursor_shape = 10
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Connector" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -7.19482
+margin_top = 12.9943
+margin_right = 6.80518
+margin_bottom = 26.9943
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="visibility_changed" from="Content" to="." method="_on_Content_visibility_changed"]
+[connection signal="toggled" from="ShowHide" to="ShowHide" method="_on_CheckBox_toggled"]
+[connection signal="pressed" from="Delete" to="." method="_on_Delete_pressed"]
+[connection signal="gui_input" from="Scaler" to="Scaler" method="_on_Scaler_gui_input"]
+[connection signal="mouse_exited" from="Scaler" to="Scaler" method="_on_Scaler_mouse_exited"]
+[connection signal="gui_input" from="Connector" to="Connector" method="_on_gui_input"]

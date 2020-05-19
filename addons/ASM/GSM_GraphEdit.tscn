@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/enhanced-graph-node/Panel.gd" type="Script" id=1]
+[ext_resource path="res://addons/ASM/scr/GSM_GraphEdit.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.2, 0.227451, 0.309804, 1 )
+
+[node name="GSM_GraphEdit" type="Control" groups=[
+"EGE",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 10000.0
+margin_bottom = 10000.0
+rect_min_size = Vector2( 10000, 10000 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Connections" type="Control" parent="Panel"]
+margin_right = 37.0
+margin_bottom = 39.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 10000
+limit_bottom = 10000
+limit_smoothed = true
+smoothing_speed = 1.0
+drag_margin_left = 0.5
+drag_margin_top = 0.5
+drag_margin_right = 0.5
+drag_margin_bottom = 0.5
+editor_draw_limits = true
+editor_draw_drag_margin = true
+[connection signal="connection_begin" from="." to="." method="_on_connection_begin"]
+[connection signal="gui_input" from="Panel" to="Panel" method="_on_gui_input"]

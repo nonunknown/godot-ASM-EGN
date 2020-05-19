@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.858824, 0.576471, 0.576471, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Point" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1010.0
+margin_bottom = -586.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/ASM/scr/GSM_Controller.gd" type="Script" id=1]
+[ext_resource path="res://addons/ASM/GSM_GraphEdit.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/ASM/scr/ActionState.gd" type="Script" id=3]
+
+[node name="GSM_Controller" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GraphEdits" type="Node" parent="."]
+
+[node name="GDM_GraphEdit" parent="GraphEdits" instance=ExtResource( 2 )]
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="A_State" type="ItemList" parent="Actions"]
+visible = false
+anchor_left = 0.019
+anchor_top = 0.023
+anchor_right = 0.019
+anchor_bottom = 0.023
+margin_left = -19.456
+margin_top = -13.8
+margin_right = 102.544
+margin_bottom = 133.2
+rect_pivot_offset = Vector2( 18.9292, 13.5773 )
+items = [ "Create State", null, false, "Create Container", null, false ]
+allow_reselect = true
+auto_height = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="item_selected" from="Actions/A_State" to="Actions/A_State" method="_on_item_selected"]
+[connection signal="mouse_exited" from="Actions/A_State" to="Actions/A_State" method="_on_mouse_exited"]
+[connection signal="visibility_changed" from="Actions/A_State" to="Actions/A_State" method="_on_visibility_changed"]

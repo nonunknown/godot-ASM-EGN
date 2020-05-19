@@ -1,0 +1,108 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "GraphNode",
+"class": "ASM_GN",
+"language": "GDScript",
+"path": "res://addons/ASM/scr/ASM_GN.gd"
+}, {
+"base": "GraphEdit",
+"class": "ASM_GraphEdit",
+"language": "GDScript",
+"path": "res://addons/ASM/scr/ASM_GraphEdit.gd"
+}, {
+"base": "Reference",
+"class": "Compiler",
+"language": "GDScript",
+"path": "res://addons/ASM/scr/Compiler.gd"
+}, {
+"base": "Control",
+"class": "ConnectionManager",
+"language": "GDScript",
+"path": "res://addons/ASM/scr/ConnectionManager.gd"
+}, {
+"base": "Control",
+"class": "EnhancedGraphEdit",
+"language": "GDScript",
+"path": "res://addons/enhanced-graph-node/EnhancedGraphEdit.gd"
+}, {
+"base": "Control",
+"class": "EnhancedGraphNode",
+"language": "GDScript",
+"path": "res://addons/enhanced-graph-node/EnhancedGraphNode.gd"
+}, {
+"base": "Control",
+"class": "GSM_Controller",
+"language": "GDScript",
+"path": "res://addons/ASM/scr/GSM_Controller.gd"
+}, {
+"base": "Panel",
+"class": "JSONViewer",
+"language": "GDScript",
+"path": "res://addons/ASM/scr/JSON_Viewer.gd"
+}, {
+"base": "Reference",
+"class": "RegexCompiler",
+"language": "GDScript",
+"path": "res://addons/ASM/scr/RegexCompiler.gd"
+}, {
+"base": "Reference",
+"class": "ScriptManager",
+"language": "GDScript",
+"path": "res://addons/ASM/scr/ScriptManager.gd"
+}, {
+"base": "Resource",
+"class": "State",
+"language": "GDScript",
+"path": "res://addons/ASM/scr/Resources/State.gd"
+}, {
+"base": "Reference",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://addons/ASM/scr/StateMachine.gd"
+}, {
+"base": "Reference",
+"class": "test",
+"language": "GDScript",
+"path": "res://addons/ASM/compiled/newmachine.gd"
+} ]
+_global_script_class_icons={
+"ASM_GN": "",
+"ASM_GraphEdit": "",
+"Compiler": "",
+"ConnectionManager": "",
+"EnhancedGraphEdit": "res://addons/enhanced-graph-node/icons/enhanced_edit.png",
+"EnhancedGraphNode": "res://addons/enhanced-graph-node/icons/enhanced_node.png",
+"GSM_Controller": "",
+"JSONViewer": "",
+"RegexCompiler": "",
+"ScriptManager": "",
+"State": "",
+"StateMachine": "",
+"test": ""
+}
+
+[application]
+
+config/name="Graphical"
+config/icon="res://icon.png"
+
+[autoload]
+
+AutoIncrement="*res://addons/enhanced-graph-node/AutoIncrement.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "QuickPluginManager", "enhanced-graph-node" )
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

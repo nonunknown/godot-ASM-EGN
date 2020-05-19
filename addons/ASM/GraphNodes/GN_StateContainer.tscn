@@ -1,0 +1,110 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/ASM/scr/GraphNodes/GN_StateContainer.gd" type="Script" id=1]
+
+[node name="sc_4204663500" type="GraphNode" groups=[
+"ASM_CONTAINER",
+"ASM_GN",
+]]
+margin_right = 320.0
+margin_bottom = 237.0
+title = "StateContainer"
+show_close = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color( 0.67451, 0.67451, 0.67451, 1 )
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color( 0.67451, 0.67451, 0.67451, 1 )
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color( 1, 1, 1, 1 )
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color( 1, 1, 1, 1 )
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color( 1, 1, 1, 1 )
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color( 1, 1, 1, 1 )
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color( 1, 1, 1, 1 )
+slot/4/right_enabled = false
+slot/4/right_type = 0
+slot/4/right_color = Color( 1, 1, 1, 1 )
+slot/5/left_enabled = false
+slot/5/left_type = 0
+slot/5/left_color = Color( 1, 1, 1, 1 )
+slot/5/right_enabled = false
+slot/5/right_type = 0
+slot/5/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 304.0
+margin_bottom = 38.0
+text = "Name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 16.0
+margin_top = 39.0
+margin_right = 304.0
+margin_bottom = 63.0
+text = "sc_4204663500"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="."]
+margin_left = 16.0
+margin_top = 64.0
+margin_right = 304.0
+margin_bottom = 104.0
+hint_tooltip = "If Enabled, the function:
+on_container_update() will be executed on each state inside this container. 
+
+Example:
+if inside the container there is
+State A, and State B
+before execute on_A_update() and on_B_update() the function on_container_update() will be executed before each call on current state's update function"
+text = "Call Update on Children [ ? ]"
+
+[node name="CheckButton2" type="CheckButton" parent="."]
+margin_left = 16.0
+margin_top = 105.0
+margin_right = 304.0
+margin_bottom = 145.0
+text = "Has OnEnter"
+
+[node name="CheckButton3" type="CheckButton" parent="."]
+margin_left = 16.0
+margin_top = 146.0
+margin_right = 304.0
+margin_bottom = 186.0
+text = "Has OnExit"
+
+[node name="bt_enter" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 187.0
+margin_right = 304.0
+margin_bottom = 207.0
+text = "Enter"
+[connection signal="close_request" from="." to="." method="_on_GNState_close_request"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="pressed" from="bt_enter" to="." method="_on_bt_enter_pressed"]

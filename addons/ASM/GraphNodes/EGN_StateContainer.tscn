@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/ASM/GraphNodes/EGN_State.tscn" type="PackedScene" id=1]
+
+[node name="EGN_StateContainer" instance=ExtResource( 1 )]
+title = "Graph Node"
+
+[node name="Content" parent="." index="0"]
+margin_bottom = 226.0
+rect_min_size = Vector2( 0, 209 )
+
+[node name="bt_enter" type="Button" parent="Content/VBoxContainer" index="4"]
+margin_top = 134.0
+margin_right = 306.0
+margin_bottom = 154.0
+text = "Enter"
+flat = true
+
+[node name="Title" parent="." index="2"]
+text = "Graph Node"
